@@ -16,7 +16,7 @@ public class MainDemoApp {
 		System.out.println("Call the method again...");
 		theAccountDAO.addAccount();
 		
-		System.out.println("CALLING MEMBERSHIP DAO AOP");
+		System.out.println("\n\nCALLING MEMBERSHIP DAO AOP");
 		theMembershipDAO.addAccount();
 		System.out.println("Call the method again...");
 		theMembershipDAO.addAccount();
