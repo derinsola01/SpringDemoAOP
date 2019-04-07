@@ -12,14 +12,16 @@ public class MainDemoApp {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DemoConfig.class);
 		AccountDAO theAccountDAO = context.getBean("accountDAO", AccountDAO.class);
 		MembershipDAO theMembershipDAO = context.getBean("membershipDAO", MembershipDAO.class);
-		theAccountDAO.addAccount();
+		Account myAccount = new Account();
+		boolean derinFlag = false;
+		theAccountDAO.addAccount(myAccount, derinFlag);
 		System.out.println("Call the method again...");
-		theAccountDAO.addAccount();
+		theAccountDAO.addAccount(myAccount, derinFlag);
 		
 		System.out.println("\n\nCALLING MEMBERSHIP DAO AOP");
-		theMembershipDAO.addAccount();
+		theMembershipDAO.addAccount(myAccount);
 		System.out.println("Call the method again...");
-		theMembershipDAO.addAccount();
+		theMembershipDAO.addAccount(myAccount);
 		
 		context.close();
 	}
